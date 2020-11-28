@@ -1,0 +1,87 @@
+<head>
+  <title>Buzz!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript">
+    var timeLastPressed = new Date();
+    function trigger(key) {
+      var timePressed = new Date()
+      var timeSinceLastPressed = timePressed - timeLastPressed;
+      if (timeSinceLastPressed > 500) {
+        timeLastPressed = timePressed
+        var request = new XMLHttpRequest()
+        request.open('GET', '{{ server_url }}/buzz/trigger/' + key, true)
+        request.send()
+      }
+    }
+  </script>
+  <style>
+    .container {
+      height: 100%;
+      max-width: 960px;
+      position: relative;
+      background-color: #555; 
+    }
+    .square {
+      padding-top: 2%;
+      height: 40%;
+      width: 100%;
+      position: relative;
+    }
+    .roundbutton {
+      height: 100%;
+      width: 100%;
+      background-color: #ff0000;
+      display: inline-block;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .rectangle {
+      height: 12%;
+      width: 100%;
+      display: flex;
+      position: relative;
+      margin: 10px 0px auto;
+      align-items: center;
+      justify-content: center;
+    }
+    .rectanglebutton {
+      height: 100%;
+      width: 95%;
+      border-radius: 5%;
+      position: absolute;
+      margin: 0 auto;
+      display: block;
+    }
+    .option1 {
+      background-color: #0099ff;
+    }
+    .option2 {
+      background-color: #ffbb00;
+    }
+    .option3 {
+      background-color: #00ff55;
+    }
+    .option4 {
+      background-color: #eeff00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="square">
+      <button class="roundbutton" type="button" onclick="trigger('{{ player_mappings.buzzer }}')"></button>
+    </div>
+    <div class="rectangle">
+      <button class="rectanglebutton option1" type="button" onclick="trigger('{{ player_mappings.option_1 }}')"></button>
+    </div>
+    <div class="rectangle">
+      <button class="rectanglebutton option2" type="button" onclick="trigger('{{ player_mappings.option_2 }}')"></button>
+    </div>
+    <div class="rectangle">
+      <button class="rectanglebutton option3" type="button" onclick="trigger('{{ player_mappings.option_3 }}')"></button>
+    </div>
+    <div class="rectangle">
+      <button class="rectanglebutton option4" type="button" onclick="trigger('{{ player_mappings.option_4 }}')"></button>
+    </div>
+  </div>
+</body>
