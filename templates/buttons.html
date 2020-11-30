@@ -17,8 +17,8 @@
     var elem = document.documentElement;
 
     function toggleFullscreen(element) {
-      if (element.innerHTML == "Turn fullscreen on") {
-        element.innerHTML = "Turn fullscreen off"
+      if (element.innerHTML == "Fullscreen on") {
+        element.innerHTML = "Fullscreen off"
         if (elem.requestFullscreen) {
           elem.requestFullscreen();
         } else if (elem.webkitRequestFullscreen) { /* Safari */
@@ -27,7 +27,7 @@
           elem.msRequestFullscreen();
         }
       } else {
-        element.innerHTML = "Turn fullscreen on"
+        element.innerHTML = "Fullscreen on"
         if (document.exitFullscreen) {
           document.exitFullscreen();
         } else if (document.webkitExitFullscreen) { /* Safari */
@@ -98,7 +98,7 @@
 <body>
   <div class="container" id="container">
     <div class="fullscreenToggle">
-      <button onclick="toggleFullscreen(this)">Turn fullscreen on</button>
+      <button onclick="toggleFullscreen(this)">Fullscreen on</button>
     </div>
     <div class="square">
       <button class="roundbutton" type="button" onclick="trigger('{{ player_mappings.buzzer }}')"></button>
