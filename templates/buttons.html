@@ -13,6 +13,30 @@
         request.send()
       }
     }
+
+    var elem = document.documentElement;
+
+    function toggleFullscreen(element) {
+      if (element.innerHTML == "Turn fullscreen on") {
+        element.innerHTML = "Turn fullscreen off"
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+          elem.msRequestFullscreen();
+        }
+      } else {
+        element.innerHTML = "Turn fullscreen on"
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) { /* Safari */
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE11 */
+          document.msExitFullscreen();
+        }
+      }
+    }
   </script>
   <style>
     .container {
@@ -64,10 +88,17 @@
     .option4 {
       background-color: #eeff00;
     }
+    .fullscreenToggle {
+      position: absolute;
+      z-index: 10;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="container">
+    <div class="fullscreenToggle">
+      <button onclick="toggleFullscreen(this)">Turn fullscreen on</button>
+    </div>
     <div class="square">
       <button class="roundbutton" type="button" onclick="trigger('{{ player_mappings.buzzer }}')"></button>
     </div>
