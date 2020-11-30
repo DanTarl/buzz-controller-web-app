@@ -6,7 +6,7 @@
     function trigger(key) {
       var timePressed = new Date()
       var timeSinceLastPressed = timePressed - timeLastPressed;
-      if (timeSinceLastPressed > 200) {
+      if (timeSinceLastPressed > 50) {
         timeLastPressed = timePressed
         var request = new XMLHttpRequest()
         request.open('GET', '{{ server_url }}/buzz/trigger/' + key, true)
