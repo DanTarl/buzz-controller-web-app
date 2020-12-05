@@ -5,6 +5,9 @@ import pyautogui
 import pydirectinput
 import json
 import os
+import logging
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 app = Flask(__name__)
 
 @app.route('/buzz/')
