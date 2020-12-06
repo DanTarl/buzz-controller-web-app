@@ -1,7 +1,7 @@
 {
-  "buzzer": "0x46",
-  "option_1": "0x47",
-  "option_2": "0x48",
-  "option_3": "0x49",
-  "option_4": "0x4A"
+  "buzzer": "f",
+  "option_1": "g",
+  "option_2": "h",
+  "option_3": "i",
+  "option_4": "j"
 }
