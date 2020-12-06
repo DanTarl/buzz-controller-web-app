@@ -1,7 +1,7 @@
 {
-  "buzzer": "u",
-  "option_1": "v",
-  "option_2": "w",
-  "option_3": "x",
-  "option_4": "y"
+  "buzzer": "0x55",
+  "option_1": "0x56",
+  "option_2": "0x57",
+  "option_3": "0x58",
+  "option_4": "0x59"
 }

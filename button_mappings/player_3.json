@@ -1,7 +1,7 @@
 {
-  "buzzer": "k",
-  "option_1": "l",
-  "option_2": "m",
-  "option_3": "n",
-  "option_4": "o"
+  "buzzer": "0x4B",
+  "option_1": "0x4C",
+  "option_2": "0x4D",
+  "option_3": "0x4E",
+  "option_4": "0x4F"
 }
