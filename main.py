@@ -2,6 +2,7 @@
 from flask import Flask
 from flask import render_template
 import pyautogui
+import pydirectinput
 import json
 import os
 import logging
@@ -21,7 +22,7 @@ def buttons(player):
 
 @app.route('/buzz/trigger/<string:key>')
 def trigger(key):
-  pyautogui.press(key)
+  pydirectinput.press(key)
   return ""
 
 if __name__ == '__main__':

@@ -7,7 +7,7 @@ Simple web app app to simulate key presses to feed into PCSX2 when playing Buzz!
 
 Install dependencies
 ```
-pip install flask pyautogui
+pip install flask pyautogui pydirectinput
 ```
 
 ## Run
