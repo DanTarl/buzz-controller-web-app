@@ -1,8 +1,8 @@
 #!flask/bin/python
 from flask import Flask
 from flask import render_template
-import pyautogui
 import pydirectinput
+pydirectinput.PAUSE = 0.05
 import json
 import os
 import logging
