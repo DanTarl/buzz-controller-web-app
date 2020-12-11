@@ -1,6 +1,7 @@
 <head>
   <title>Buzz!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript">
     var timeLastPressed = new Date();
     function trigger(key) {
@@ -16,9 +17,13 @@
 
     var elem = document.documentElement;
 
+    $( document ).ready(function() {
+      document.getElementById("fullscreenToggle").style.backgroundImage  = 'url("/static/enter_fullscreen.svg"), none'
+    });
+
     function toggleFullscreen(element) {
-      if (element.innerHTML == "Fullscreen on") {
-        element.innerHTML = "Fullscreen off"
+      if (document.getElementById("fullscreenToggle").style.backgroundImage  == 'url("/static/enter_fullscreen.svg"), none') {
+        document.getElementById("fullscreenToggle").style.backgroundImage  = 'url("/static/exit_fullscreen.svg"), none'
         if (elem.requestFullscreen) {
           elem.requestFullscreen();
         } else if (elem.webkitRequestFullscreen) { /* Safari */
@@ -27,7 +32,7 @@
           elem.msRequestFullscreen();
         }
       } else {
-        element.innerHTML = "Fullscreen on"
+        document.getElementById("fullscreenToggle").style.backgroundImage  = 'url("/static/enter_fullscreen.svg"), none'
         if (document.exitFullscreen) {
           document.exitFullscreen();
         } else if (document.webkitExitFullscreen) { /* Safari */
@@ -91,17 +96,28 @@
     .option4 {
       background-color: #eeff00;
     }
-    .fullscreenToggle {
+    #fullscreenToggle {
       position: absolute;
+      /* background-image: url(/static/enter_fullscreen.svg), none; */
+      background-size: cover;
+      width: 10%;
       z-index: 10;
+    }
+    #fullscreenToggle:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
     }
   </style>
 </head>
 <body>
   <div class="container" id="container">
-    <div class="fullscreenToggle">
-      <button onclick="toggleFullscreen(this)">Fullscreen on</button>
+    <div id="fullscreenToggle" onclick="toggleFullscreen(this)">
+      <!-- <object data="/static/enter_fullscreen.svg" type="image/svg+xml"></object> -->
     </div>
+    <!-- <div class="fullscreenToggle">
+      <button onclick="toggleFullscreen(this)">Fullscreen on</button>
+    </div> -->
     <div class="square">
       <button class="roundbutton" type="button" onclick="trigger('{{ player_mappings.buzzer }}')"></button>
     </div>

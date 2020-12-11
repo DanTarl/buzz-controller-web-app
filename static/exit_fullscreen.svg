@@ -1,0 +1,16 @@
+<svg width="600" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="602" width="602" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_1" y2="235" x2="235" y1="15" x1="15" fill-opacity="null" stroke-opacity="null" stroke-width="30" stroke="#FFF" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_3" y2="587" x2="587" y1="367" x1="367" fill-opacity="null" stroke-opacity="null" stroke-width="30" stroke="#FFF" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_4" y2="100" x2="235" y1="250" x1="235" fill-opacity="null" stroke-opacity="null" stroke-width="30" stroke="#FFF" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_5" y2="352" x2="367" y1="507" x1="367" fill-opacity="null" stroke-opacity="null" stroke-width="30" stroke="#FFF" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_8" y2="367" x2="507" y1="367" x1="352" fill-opacity="null" stroke-opacity="null" stroke-width="30" stroke="#FFF" fill="none"/>
+  <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_9" y2="235" x2="250" y1="235" x1="100" fill-opacity="null" stroke-opacity="null" stroke-width="30" stroke="#FFF" fill="none"/>
+ </g>
+</svg>
