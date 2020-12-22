@@ -1,6 +1,7 @@
 #!flask/bin/python
 from flask import Flask
 from flask import render_template
+from flask import send_file
 import pydirectinput
 pydirectinput.PAUSE = 0.05
 import json
@@ -13,6 +14,10 @@ app = Flask(__name__)
 @app.route('/buzz/')
 def main():
   return render_template("index.html")
+
+@app.route('/buzz/static/<string:file>')
+def file_send(file):
+  return send_file("static/" + file)
 
 @app.route('/buzz/buttons/<int:player>')
 def buttons(player):

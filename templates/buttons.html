@@ -18,12 +18,12 @@
     var elem = document.documentElement;
 
     $( document ).ready(function() {
-      document.getElementById("fullscreenToggle").style.backgroundImage  = 'url("/static/enter_fullscreen.svg"), none'
+      document.getElementById("fullscreenToggle").style.backgroundImage  = 'url("/buzz/static/enter_fullscreen.svg"), none'
     });
 
     function toggleFullscreen(element) {
-      if (document.getElementById("fullscreenToggle").style.backgroundImage  == 'url("/static/enter_fullscreen.svg"), none') {
-        document.getElementById("fullscreenToggle").style.backgroundImage  = 'url("/static/exit_fullscreen.svg"), none'
+      if (document.getElementById("fullscreenToggle").style.backgroundImage  == 'url("/buzz/static/enter_fullscreen.svg"), none') {
+        document.getElementById("fullscreenToggle").style.backgroundImage  = 'url("/buzz/static/exit_fullscreen.svg"), none'
         if (elem.requestFullscreen) {
           elem.requestFullscreen();
         } else if (elem.webkitRequestFullscreen) { /* Safari */
@@ -32,7 +32,7 @@
           elem.msRequestFullscreen();
         }
       } else {
-        document.getElementById("fullscreenToggle").style.backgroundImage  = 'url("/static/enter_fullscreen.svg"), none'
+        document.getElementById("fullscreenToggle").style.backgroundImage  = 'url("/buzz/static/enter_fullscreen.svg"), none'
         if (document.exitFullscreen) {
           document.exitFullscreen();
         } else if (document.webkitExitFullscreen) { /* Safari */
@@ -98,7 +98,7 @@
     }
     #fullscreenToggle {
       position: absolute;
-      /* background-image: url(/static/enter_fullscreen.svg), none; */
+      /* background-image: url(/buzz/static/enter_fullscreen.svg), none; */
       background-size: cover;
       width: 10%;
       z-index: 10;
@@ -113,7 +113,7 @@
 <body>
   <div class="container" id="container">
     <div id="fullscreenToggle" onclick="toggleFullscreen(this)">
-      <!-- <object data="/static/enter_fullscreen.svg" type="image/svg+xml"></object> -->
+      <!-- <object data="/buzz/static/enter_fullscreen.svg" type="image/svg+xml"></object> -->
     </div>
     <!-- <div class="fullscreenToggle">
       <button onclick="toggleFullscreen(this)">Fullscreen on</button>
