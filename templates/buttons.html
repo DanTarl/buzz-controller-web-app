@@ -98,7 +98,6 @@
     }
     #fullscreenToggle {
       position: absolute;
-      /* background-image: url(/buzz/static/enter_fullscreen.svg), none; */
       background-size: cover;
       width: 10%;
       z-index: 10;
@@ -113,11 +112,7 @@
 <body>
   <div class="container" id="container">
     <div id="fullscreenToggle" onclick="toggleFullscreen(this)">
-      <!-- <object data="/buzz/static/enter_fullscreen.svg" type="image/svg+xml"></object> -->
     </div>
-    <!-- <div class="fullscreenToggle">
-      <button onclick="toggleFullscreen(this)">Fullscreen on</button>
-    </div> -->
     <div class="square">
       <button class="roundbutton" type="button" onclick="trigger('{{ player_mappings.buzzer }}')"></button>
     </div>
