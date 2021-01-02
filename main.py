@@ -23,7 +23,7 @@ def file_send(file):
 def buttons(player):
   with open('button_mappings/player_' + str(player) + '.json') as f:
     player_mappings = json.load(f)
-  return render_template("buttons.html", player_mappings=player_mappings, server_url=os.environ.get("WEB_SERVER_URL"))
+  return render_template("buttons.html", player=player, player_mappings=player_mappings, server_url=os.environ.get("WEB_SERVER_URL"))
 
 @app.route('/buzz/trigger/<string:key>')
 def trigger(key):

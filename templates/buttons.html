@@ -19,6 +19,7 @@
 
     $( document ).ready(function() {
       document.getElementById("fullscreenToggle").style.backgroundImage  = 'url("/buzz/static/enter_fullscreen.svg"), none'
+      document.getElementById("playPauseToggle").style.backgroundImage  = 'url("/buzz/static/play_pause.svg"), none'
     });
 
     function toggleFullscreen(element) {
@@ -107,12 +108,28 @@
       display: block;
       padding-bottom: 100%;
     }
+    #playPauseToggle {
+      position: absolute;
+      right: 0;
+      background-size: cover;
+      width: 10%;
+      z-index: 10;
+    }
+    #playPauseToggle:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
   </style>
 </head>
 <body>
   <div class="container" id="container">
     <div id="fullscreenToggle" onclick="toggleFullscreen(this)">
     </div>
+    {% if player == 1 %}
+      <div id="playPauseToggle" onclick="trigger('esc')">
+      </div>
+    {% endif %}
     <div class="square">
       <button class="roundbutton" type="button" onclick="trigger('{{ player_mappings.buzzer }}')"></button>
     </div>
