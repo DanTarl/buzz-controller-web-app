@@ -40,7 +40,7 @@ To configure the plugin:
 Player 1 gets a play/pause symbol displayed on the top right of their buzzer screen. This works best if you disable "Hide window when paused" in the PCSX2 settings (Config -> Emulation Settings -> GS Window).
 
 ### Games tested
-| Game | Region | State | Verified by |
-| --- | --- | --- | --- |
-| Buzz! The Mega Quiz | NTSC-U | Working out of the box | [DanTarl](https://github.com/DanTarl) |
-| Buzz! The Mega Quiz | PAL | Requires USBqemu-wheel fix to prevent buzzer being constantly pressed ([link to fix](https://github.com/jackun/USBqemu-wheel/issues/31#issuecomment-625177710)) | [DanTarl](https://github.com/DanTarl) |
+| Game | Region | OS | State | Verified by |
+| --- | --- | --- | --- | --- |
+| Buzz! The Mega Quiz | NTSC-U | Windows 10 | Working out of the box | [DanTarl](https://github.com/DanTarl) |
+| Buzz! The Mega Quiz | PAL | Windows 10 | Requires USBqemu-wheel fix to prevent buzzer being constantly pressed ([link to fix](https://github.com/jackun/USBqemu-wheel/issues/31#issuecomment-625177710)) | [DanTarl](https://github.com/DanTarl) |
