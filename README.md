@@ -5,7 +5,9 @@ Can be used to play the game remotely if desired. 720p over Zoom works okay, alt
 
 ## Requirements
 1. Set the WEB_SERVER_URL environment variables (including protocol), e.g. https://myserver.com/
-2. Install dependencies
+2. Python 3
+3. Pip
+4. Install dependencies
 ```
 pip install flask pyautogui pydirectinput
 ```
