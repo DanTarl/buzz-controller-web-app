@@ -9,7 +9,7 @@ Can be used to play the game remotely if desired. 720p over Zoom works okay, alt
 3. Pip
 4. Install dependencies
 ```
-pip install flask pyautogui pydirectinput
+pip install flask pydirectinput
 ```
 
 ## Run
