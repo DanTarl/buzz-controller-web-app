@@ -2,6 +2,7 @@
 from flask import Flask
 from flask import render_template
 from flask import send_file
+from flask import make_response
 import json
 import os
 import logging
@@ -18,8 +19,8 @@ except:
 
 @app.route('/buzz/')
 def main():
-  response = render_template("index.html")
-  response.headers['Access-Control-Allow-Origin'] = os.environ.get("WEB_SERVER_URL")
+  response = make_response(render_template("index.html"))
+  response.headers.set('Access-Control-Allow-Origin'], os.environ.get("WEB_SERVER_URL"))
   return response
 
 @app.route('/buzz/static/<string:file>')
@@ -30,8 +31,8 @@ def file_send(file):
 def buttons(player):
   with open('button_mappings/player_' + str(player) + '.json') as f:
     player_mappings = json.load(f)
-  response = render_template("buttons.html", player=player, player_mappings=player_mappings, server_url=os.environ.get("WEB_SERVER_URL"))
-  response.headers['Access-Control-Allow-Origin'] = os.environ.get("WEB_SERVER_URL")
+  response = make_response(render_template("buttons.html", player=player, player_mappings=player_mappings, server_url=os.environ.get("WEB_SERVER_URL")))
+  response.headers.set('Access-Control-Allow-Origin', os.environ.get("WEB_SERVER_URL"))
   return response 
 
 @app.route('/buzz/trigger/<string:key>')
