@@ -12,7 +12,7 @@ app = Flask(__name__)
 try:
   import pydirectinput as keyboard
   pydirectinput.PAUSE = 0.05
-except ImportError:
+except:
   from pynput.keyboard import Controller
   keyboard = Controller()
 
