@@ -20,7 +20,7 @@ except:
 @app.route('/buzz/')
 def main():
   response = make_response(render_template("index.html"))
-  response.headers.set('Access-Control-Allow-Origin'], os.environ.get("WEB_SERVER_URL"))
+  response.headers.set('Access-Control-Allow-Origin', os.environ.get("WEB_SERVER_URL"))
   return response
 
 @app.route('/buzz/static/<string:file>')
