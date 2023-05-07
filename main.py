@@ -6,7 +6,7 @@ import json
 import os
 import logging
 log = logging.getLogger('werkzeug')
-log.setLevel(logging.ERROR)
+log.setLevel(logging.DEBUG)
 app = Flask(__name__)
 
 try:
@@ -33,6 +33,7 @@ def buttons(player):
 @app.route('/buzz/trigger/<string:key>')
 def trigger(key):
   keyboard.press(key)
+  keyboard.release(key)
   return ""
 
 if __name__ == '__main__':
