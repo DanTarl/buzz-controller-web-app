@@ -2,14 +2,19 @@
 from flask import Flask
 from flask import render_template
 from flask import send_file
-import pydirectinput
-pydirectinput.PAUSE = 0.05
 import json
 import os
 import logging
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 app = Flask(__name__)
+
+try:
+  import pydirectinput as keyboard
+  pydirectinput.PAUSE = 0.05
+except ImportError:
+  from pynput.keyboard import Controller
+  keyboard = Controller()
 
 @app.route('/buzz/')
 def main():
@@ -27,7 +32,7 @@ def buttons(player):
 
 @app.route('/buzz/trigger/<string:key>')
 def trigger(key):
-  pydirectinput.press(key)
+  keyboard.press(key)
   return ""
 
 if __name__ == '__main__':
