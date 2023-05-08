@@ -40,7 +40,7 @@ def trigger(key):
   keyboard.press(key)
   keyboard.release(key)
   response = make_response("<html></html>")
-  response.headers.set('Access-Control-Allow-Origin', os.environ.get("WEB_SERVER_URL"))
+  response.headers.set('Access-Control-Allow-Origin', os.environ.get("WEB_SERVER_URL") + ":5000")
   return response
 
 if __name__ == '__main__':
