@@ -33,13 +33,15 @@ def buttons(player):
     player_mappings = json.load(f)
   response = make_response(render_template("buttons.html", player=player, player_mappings=player_mappings, server_url=os.environ.get("WEB_SERVER_URL")))
   response.headers.set('Access-Control-Allow-Origin', os.environ.get("WEB_SERVER_URL"))
-  return response 
+  return response
 
 @app.route('/buzz/trigger/<string:key>')
 def trigger(key):
   keyboard.press(key)
   keyboard.release(key)
-  return ""
+  response = make_response("<html></html>")
+  response.headers.set('Access-Control-Allow-Origin', os.environ.get("WEB_SERVER_URL"))
+  return response
 
 if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0', port=5000)
