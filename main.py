@@ -19,9 +19,6 @@ except:
 
 @app.route('/buzz/')
 def main():
-  # response = make_response(render_template("index.html"))
-  # response.headers.set('Access-Control-Allow-Origin', os.environ.get("WEB_SERVER_URL"))
-  # return response
   return render_template("index.html")
 
 @app.route('/buzz/static/<string:file>')
@@ -32,18 +29,12 @@ def file_send(file):
 def buttons(player):
   with open('button_mappings/player_' + str(player) + '.json') as f:
     player_mappings = json.load(f)
-  # response = make_response(render_template("buttons.html", player=player, player_mappings=player_mappings, server_url=os.environ.get("WEB_SERVER_URL")))
-  # response.headers.set('Access-Control-Allow-Origin', os.environ.get("WEB_SERVER_URL"))
-  # return response
   return render_template("buttons.html", player=player, player_mappings=player_mappings, server_url=os.environ.get("WEB_SERVER_URL"))
 
 @app.route('/buzz/trigger/<string:key>')
 def trigger(key):
   keyboard.press(key)
   keyboard.release(key)
-  # response = make_response("<html></html>")
-  # response.headers.set('Access-Control-Allow-Origin', os.environ.get("WEB_SERVER_URL") + ":5000")
-  # return response
   return ""
 
 if __name__ == '__main__':
