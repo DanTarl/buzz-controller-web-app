@@ -6,9 +6,19 @@ from flask import make_response
 import json
 import os
 import logging
+import socket
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.DEBUG)
 app = Flask(__name__)
+
+server_url = None
+if os.environ.get("WEB_SERVER_URL") == None:
+  s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+  s.connect(("8.8.8.8", 80))
+  server_url = "http://" + s.getsockname()[0] + ":5000"
+  s.close()
+else:
+  server_url = os.environ.get("WEB_SERVER_URL")
 
 try:
   import pydirectinput as keyboard
@@ -29,7 +39,7 @@ def file_send(file):
 def buttons(player):
   with open('button_mappings/player_' + str(player) + '.json') as f:
     player_mappings = json.load(f)
-  return render_template("buttons.html", player=player, player_mappings=player_mappings, server_url=os.environ.get("WEB_SERVER_URL"))
+  return render_template("buttons.html", player=player, player_mappings=player_mappings, server_url=server_url)
 
 @app.route('/buzz/trigger/<string:key>')
 def trigger(key):
